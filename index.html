@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    
+</body>
+</html>
+ <style>
+
+body {
+    background-image: url('C:\nature.jpg');
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    
+}
+
+.login-container {
+    background: transparent;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: black;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+   
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#message {
+    margin-top: 10px;
+    color: red;
+}
+
+ </style>
+
+ <script>
+
+function validateLogin() {
+        // Get the values entered in the form
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // For demonstration purposes, use hardcoded credentials
+        const validUsername = 'admin';
+        const validPassword = 'password123';
+
+        // Check if entered credentials match the valid ones
+        if (username === validUsername && password === validPassword) {
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').textContent = 'Login successful!';
+            alert('Login successful!');
+            // You can redirect the user to a different page after successful login
+            // window.location.href = "dashboard.html"; // Uncomment and update the URL as needed
+            return false; // Prevent form submission for demonstration
+        } else {
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').textContent = 'Invalid username or password. Please try again.';
+            return false; // Prevent form submission
+        }
+    }
+ </script>
